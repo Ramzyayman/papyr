@@ -1,0 +1,2 @@
+# papyr
+A modern book catalog website, designed to help users discover, explore, and keep track of books. Browse books, view detailed information, and explore a clean, organized library through a simple and intuitive interface.
