@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+=========================================
+— Global Styles
+========================================= 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root {
+ 
+    /* papyr colors */
+  --papyr-primary: #5d4037;
+  --papyr-secondary: #d7ccc8;
+  --papyr-tertiary: #f5f5f4;
+  --papyr-neutral: #2c2c2c;
+  --papyr-white: #ffffff;
+  --papyr-background: #ffffff;
+  --papyr-surface: #f8f4f2;
+  --papyr-border: #d8cbc6;
+
+  /* papyr font variables */
+  --papyr-font-display: 'Playfair Display', serif;
+  --papyr-font-body: 'Inter', sans-serif;
+}
+
+/* ---------- main  ---------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--papyr-font-body);
+  color: var(--papyr-neutral);
+  background-color: var(--papyr-background);
+}
+
+/* ---------- headers ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: var(--papyr-font-display);
+  color: var(--papyr-primary);
+}
+
+/* ---------- links ---------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- button ---------- */
+
+button {
+  font-family: inherit;
+}
+
+/* ---------- images ---------- */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+

@@ -1,0 +1,187 @@
+.papyr-header {
+  width: 100%;
+  background: var(--papyr-white);
+}
+
+.papyr-header__inner {
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4.5rem;
+}
+
+/* ========================================
+   Logo
+   ======================================== */
+
+.papyr-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  color: var(--papyr-primary);
+  text-decoration: none;
+}
+
+.papyr-logo__mark {
+  position: relative;
+
+  width: 32px;
+  height: 28px;
+
+  display: flex;
+  gap: 2px;
+}
+
+.papyr-logo__mark span {
+  width: 15px;
+  height: 28px;
+
+  background: var(--papyr-primary);
+}
+
+.papyr-logo__mark span:first-child {
+  border-radius: 2px 2px 0 0;
+}
+
+.papyr-logo__mark span:last-child {
+  border-radius: 2px 2px 0 0;
+}
+
+.papyr-logo__text {
+  font-family: var(--papyr-font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+
+.papyr-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.papyr-nav a {
+  position: relative;
+
+  padding: 0.5rem 0;
+
+  color: var(--papyr-neutral);
+  text-decoration: none;
+
+  font-family: var(--papyr-font-body);
+  font-size: 1rem;
+  font-weight: 400;
+
+  transition: color 150ms ease;
+}
+
+.papyr-nav a:hover {
+  color: var(--papyr-primary);
+}
+
+.papyr-nav a.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background-color: var(--papyr-primary);
+}
+
+/* ========================================
+   Authentication
+   ======================================== */
+
+.papyr-auth {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.papyr-auth a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  height: 38px;
+  padding: 0 1rem;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.9rem;
+
+  text-decoration: none;
+
+  transition: all 150ms ease;
+}
+
+.papyr-auth__login {
+  color: var(--papyr-white);
+  background-color: var(--papyr-primary);
+
+  border: 1px solid var(--papyr-primary);
+}
+
+.papyr-auth__login:hover {
+  color: var(--papyr-white);
+  opacity: 0.9;
+}
+
+.papyr-auth__signup {
+  color: var(--papyr-primary);
+  background-color: transparent;
+
+  border: 1px solid var(--papyr-primary);
+}
+
+.papyr-auth__signup:hover {
+  color: var(--papyr-white);
+  background-color: var(--papyr-primary);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  .papyr-header__inner {
+    min-height: 70px;
+    padding: 0 1.5rem;
+  }
+
+  .papyr-nav {
+    gap: 1rem;
+  }
+
+  .papyr-nav a {
+    font-size: 0.9rem;
+  }
+
+  .papyr-logo__text {
+    font-size: 1.5rem;
+  }
+
+  .papyr-logo__mark {
+    width: 29px;
+    height: 26px;
+  }
+
+  .papyr-account {
+    font-size: 1rem;
+  }
+}

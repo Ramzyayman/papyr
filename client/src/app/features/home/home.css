@@ -1,0 +1,369 @@
+.hero {
+  position: relative;
+
+  min-height: 460px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url('/images/hero-books.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(15, 10, 7, 0.72);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+
+  width: min(720px, calc(100% - 2rem));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--papyr-white);
+}
+
+/* ========================================
+   Hero Brand
+   ======================================== */
+
+.hero__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.hero__brand-name {
+  font-family: var(--papyr-font-display);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+
+  color: var(--papyr-white);
+}
+
+.hero__brand-mark {
+  display: flex;
+  gap: 3px;
+
+  width: 62px;
+  height: 55px;
+}
+
+.hero__brand-mark span {
+  width: 29px;
+  height: 55px;
+
+  background: var(--papyr-white);
+}
+
+/* ========================================
+   Search
+   ======================================== */
+
+.hero__search {
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid var(--papyr-white);
+  border-radius: 24px;
+
+  overflow: hidden;
+}
+
+.hero__search input {
+  flex: 1;
+
+  height: 100%;
+
+  padding: 0 1.4rem;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--papyr-white);
+
+  font-family: var(--papyr-font-body);
+  font-size: 1rem;
+}
+
+.hero__search input::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__search button {
+  width: 55px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--papyr-white);
+
+  font-size: 1.15rem;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   Description
+   ======================================== */
+
+.hero__description {
+  margin-top: 1.75rem;
+
+  text-align: center;
+
+  font-family: var(--papyr-font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hero__description p {
+  margin: 0;
+}
+
+.hero__description p + p {
+  margin-top: 0.15rem;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero__brand-name {
+    font-size: 3rem;
+  }
+
+  .hero__brand-mark {
+    width: 48px;
+    height: 44px;
+  }
+
+  .hero__brand-mark span {
+    width: 23px;
+    height: 44px;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   Featured Collections
+   ======================================== */
+
+.featured-collections {
+  padding: 4.5rem 0 5rem;
+
+  background-color: var(--papyr-surface-alt);
+}
+
+.featured-collections__container {
+  width: min(1200px, calc(100% - 4rem));
+
+  margin: 0 auto;
+}
+
+/* ========================================
+   Section Header
+   ======================================== */
+
+.featured-collections__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+.featured-collections__header h2 {
+  margin-bottom: 0.4rem;
+
+  font-family: var(--papyr-font-display);
+  font-size: 2rem;
+  font-weight: 600;
+
+  color: var(--papyr-primary);
+}
+
+.featured-collections__header p {
+  margin: 0;
+
+  font-size: 0.95rem;
+
+  color: var(--papyr-neutral);
+}
+
+.featured-collections__explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  color: var(--papyr-primary);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.featured-collections__explore:hover {
+  color: var(--papyr-neutral);
+}
+
+/* ========================================
+   Collection Cards
+   ======================================== */
+
+.collection-card {
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.collection-card img {
+  width: 100%;
+  aspect-ratio: 1.35 / 1;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  transition: transform 200ms ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.01);
+}
+
+.collection-card h3 {
+  margin: 1rem 0 0.35rem;
+
+  font-family: var(--papyr-font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  color: var(--papyr-primary);
+}
+
+.collection-card p {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  color: var(--papyr-neutral);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  .featured-collections {
+    padding: 3rem 0;
+  }
+
+  .featured-collections__container {
+    width: min(100% - 2rem, 600px);
+  }
+
+  .featured-collections__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ========================================
+   Quote
+   ======================================== */
+
+.quote-section {
+  padding: 5rem 2rem;
+
+  background-color: var(--papyr-white);
+}
+
+.quote-section__content {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.quote-section__mark {
+  margin-bottom: 0.75rem;
+
+  font-family: var(--papyr-font-display);
+  font-size: 3rem;
+  line-height: 1;
+
+  color: var(--papyr-secondary);
+}
+
+.quote-section blockquote {
+  margin: 0;
+
+  font-family: var(--papyr-font-display);
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: var(--papyr-primary);
+}
+
+.quote-section cite {
+  display: block;
+
+  margin-top: 1.25rem;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--papyr-neutral);
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .quote-section blockquote {
+    font-size: 1.5rem;
+  }
+}

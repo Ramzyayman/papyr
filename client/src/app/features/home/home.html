@@ -1,0 +1,115 @@
+<!-- HERO  -->
+<section class="hero">
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <div class="hero__brand">
+      <span class="hero__brand-mark">
+        <span></span>
+        <span></span>
+      </span>
+
+      <span class="hero__brand-name">Papyr</span>
+    </div>
+
+    <div class="hero__search">
+      <input
+        type="text"
+        placeholder="search by title..."
+        aria-label="Search books by title"
+      />
+
+      <button type="button" aria-label="Search">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+
+    <div class="hero__description">
+      <p>Explore. Discover. Read.</p>
+      <p>Find your next book from our collection.</p>
+    </div>
+  </div>
+</section>
+<!-- FEATURE COLLECTION -->
+<section class="featured-collections">
+  <div class="featured-collections__container">
+
+    <div class="featured-collections__header">
+      <div>
+        <h2>Featured Collections</h2>
+        <p>Curated selections for the discerning reader.</p>
+      </div>
+
+      <a routerLink="/categories" class="featured-collections__explore">
+        Explore all
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- The Classics -->
+      <div class="col-12 col-md-4">
+        <a routerLink="/categories" class="collection-card">
+          <img
+            src="/images/classics.jpg"
+            alt="The Classics collection"
+          />
+
+          <h3>The Classics</h3>
+
+          <p>
+            Foundational texts that shaped civilization.
+          </p>
+        </a>
+      </div>
+
+      <!-- Modern Fiction -->
+      <div class="col-12 col-md-4">
+        <a routerLink="/categories" class="collection-card">
+          <img
+            src="/images/modern-fiction.jpg"
+            alt="Modern Fiction collection"
+          />
+
+          <h3>Modern Fiction</h3>
+
+          <p>
+            Contemporary voices and compelling narratives.
+          </p>
+        </a>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="col-12 col-md-4">
+        <a routerLink="/categories" class="collection-card">
+          <img
+            src="/images/philosophy.jpg"
+            alt="Philosophy collection"
+          />
+
+          <h3>Philosophy</h3>
+
+          <p>
+            Inquiries into existence, knowledge, and ethics.
+          </p>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE SECTION -->
+ <section class="quote-section">
+  <div class="quote-section__content">
+    <div class="quote-section__mark">“</div>
+
+    <blockquote>
+      A room without books is like a body without a soul.
+    </blockquote>
+
+    <cite>— Marcus Tullius Cicero</cite>
+  </div>
+</section>

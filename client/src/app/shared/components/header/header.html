@@ -1,0 +1,46 @@
+<header class="papyr-header">
+  <div class="container-fluid papyr-header__inner">
+
+    <a class="papyr-logo" routerLink="/">
+      <span class="papyr-logo__mark">
+        <span></span>
+        <span></span>
+      </span>
+
+      <span class="papyr-logo__text">Papyr</span>
+    </a>
+
+    <nav class="papyr-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+
+      <a routerLink="/categories" routerLinkActive="active">
+        Categories
+      </a>
+
+      <a routerLink="/library" routerLinkActive="active">
+        My Library
+      </a>
+    </nav>
+
+    <div class="papyr-auth">
+      <a
+        routerLink="/login"
+        class="papyr-auth__login"
+      >
+        <i class="bi bi-box-arrow-in-right"></i>
+        Sign in
+      </a>
+
+      <a
+        routerLink="/signup"
+        class="papyr-auth__signup"
+      >
+        <i class="bi bi-person"></i>
+        Sign up
+      </a>
+    </div>
+
+  </div>
+</header>
