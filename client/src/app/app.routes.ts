@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './features/home/home';
-import { Categories } from './features/categories/categories';
+import { Catalog } from './features/catalog/catalog';
 
 export const routes: Routes = [
     {
@@ -8,7 +8,7 @@ export const routes: Routes = [
         component: Home
     },
     {
-        path: 'categories',
-        component: Categories
+        path: 'catalog',
+        component: Catalog
     }
 ];

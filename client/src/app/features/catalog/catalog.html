@@ -1,0 +1,413 @@
+<div class="catalog-page">
+
+  <div class="container">
+
+    <!-- ========================================
+         Header
+         ======================================== -->
+
+    <header class="catalog-heading">
+
+      <h1>Catalog</h1>
+
+      <p>
+        Browse our collection and discover your next read.
+      </p>
+
+    </header>
+
+
+    <!-- ========================================
+         Search
+         ======================================== -->
+
+    <div class="catalog-search">
+
+      <i
+        class="bi bi-search"
+        aria-hidden="true"
+      ></i>
+
+      <input
+        type="search"
+        placeholder="Search by title or author..."
+        [value]="searchTerm"
+        (input)="onSearch($event)"
+        aria-label="Search books"
+      />
+
+      @if (searchTerm) {
+
+        <button
+          type="button"
+          class="catalog-search__clear"
+          (click)="clearFilters()"
+          aria-label="Clear search"
+        >
+          <i class="bi bi-x"></i>
+        </button>
+
+      }
+
+    </div>
+
+
+    <!-- ========================================
+         Main layout
+         ======================================== -->
+
+    <div class="row catalog-layout">
+
+      <!-- ======================================
+           Sidebar
+           ====================================== -->
+
+      <aside class="col-lg-3 catalog-sidebar">
+
+
+        <!-- Active filters -->
+
+        @if (hasActiveFilters) {
+
+          <div class="active-filters">
+
+            <div class="active-filters__header">
+
+              <span>Active filters</span>
+
+              <button
+                type="button"
+                (click)="clearFilters()"
+              >
+                Clear all
+              </button>
+
+            </div>
+
+
+            <div class="active-filters__list">
+
+              @if (searchTerm) {
+
+                <button
+                  type="button"
+                  class="filter-chip"
+                  (click)="searchTerm = ''; resetPagination()"
+                >
+                  Search: "{{ searchTerm }}"
+
+                  <i class="bi bi-x"></i>
+                </button>
+
+              }
+
+
+              @for (
+                filter of activeFilters;
+                track filter
+              ) {
+
+                <button
+                  type="button"
+                  class="filter-chip"
+                  (click)="removeFilter(filter)"
+                >
+                  {{ filter }}
+
+                  <i class="bi bi-x"></i>
+                </button>
+
+              }
+
+            </div>
+
+          </div>
+
+        }
+
+
+        <!-- Genres -->
+
+        <section class="filter-section">
+
+          <h2>Genres</h2>
+
+          <div class="filter-options">
+
+            @for (
+              genre of genres;
+              track genre.name
+            ) {
+
+              <label class="filter-option">
+
+                <input
+                  type="checkbox"
+                  [checked]="genre.selected"
+                  (change)="onGenreChange(genre)"
+                />
+
+                <span class="filter-option__label">
+                  {{ genre.name }}
+                </span>
+
+              </label>
+
+            }
+
+          </div>
+
+        </section>
+
+
+        <!-- Era -->
+
+        <section class="filter-section">
+
+          <h2>Era</h2>
+
+          <div class="filter-options">
+
+            @for (
+              era of eras;
+              track era.name
+            ) {
+
+              <label class="filter-option">
+
+                <input
+                  type="checkbox"
+                  [checked]="era.selected"
+                  (change)="onEraChange(era)"
+                />
+
+                <span class="filter-option__label">
+                  {{ era.name }}
+                </span>
+
+              </label>
+
+            }
+
+          </div>
+
+        </section>
+
+      </aside>
+
+
+      <!-- ======================================
+           Books
+           ====================================== -->
+
+      <main class="col-lg-9 catalog-content">
+
+
+        <!-- Toolbar -->
+
+        <div class="catalog-toolbar">
+
+          <p class="catalog-results">
+
+            @if (filteredBooks.length === 1) {
+              1 book
+            } @else {
+              {{ filteredBooks.length }} books
+            }
+
+          </p>
+
+
+          <label class="sort-control">
+
+            <span>Sort by</span>
+
+            <select
+              [value]="sortBy"
+              (change)="onSortChange($event)"
+            >
+
+              <option value="title-asc">
+                Title (A–Z)
+              </option>
+
+              <option value="title-desc">
+                Title (Z–A)
+              </option>
+
+              <option value="rating-desc">
+                Highest Rated
+              </option>
+
+              <option value="rating-asc">
+                Lowest Rated
+              </option>
+
+            </select>
+
+          </label>
+
+        </div>
+
+
+        <!-- ====================================
+             Book grid
+             ==================================== -->
+
+        @if (paginatedBooks.length > 0) {
+
+          <div class="row book-grid">
+
+            @for (
+              book of paginatedBooks;
+              track book.id
+            ) {
+
+              <div
+                class="col-12 col-sm-6 col-xl-4"
+              >
+
+                <a
+                  class="book-card"
+                  [routerLink]="['/books', book.id]"
+                >
+
+                  <div class="book-cover">
+
+                    <img
+                      [src]="book.cover"
+                      [alt]="book.title + ' cover'"
+                    />
+
+                  </div>
+
+
+                  <div class="book-info">
+
+                    <h2>
+                      {{ book.title }}
+                    </h2>
+
+                    <p class="book-author">
+                      {{ book.author }}
+                    </p>
+
+                    <div class="book-rating">
+
+                      <i
+                        class="bi bi-star-fill"
+                        aria-hidden="true"
+                      ></i>
+
+                      <span>
+                        {{ book.rating.toFixed(1) }}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </a>
+
+              </div>
+
+            }
+
+          </div>
+
+        }
+
+
+        <!-- ====================================
+             Empty state
+             ==================================== -->
+
+        @else {
+
+          <div class="catalog-empty">
+
+            <i
+              class="bi bi-book"
+              aria-hidden="true"
+            ></i>
+
+            <h2>No books found</h2>
+
+            <p>
+              We couldn't find any books matching
+              your current filters.
+            </p>
+
+            <button
+              type="button"
+              (click)="clearFilters()"
+            >
+              Clear filters
+            </button>
+
+          </div>
+
+        }
+
+
+        <!-- ====================================
+             Pagination
+             ==================================== -->
+
+        @if (totalPages > 1) {
+
+          <nav
+            class="catalog-pagination"
+            aria-label="Catalog pagination"
+          >
+
+            <button
+              type="button"
+              [disabled]="currentPage === 1"
+              (click)="previousPage()"
+            >
+              <i class="bi bi-arrow-left"></i>
+              Previous
+            </button>
+
+
+            <div class="catalog-pagination__pages">
+
+              @for (
+                page of pages;
+                track page
+              ) {
+
+                <button
+                  type="button"
+                  [class.active]="page === currentPage"
+                  (click)="goToPage(page)"
+                >
+                  {{ page }}
+                </button>
+
+              }
+
+            </div>
+
+
+            <button
+              type="button"
+              [disabled]="currentPage === totalPages"
+              (click)="nextPage()"
+            >
+              Next
+              <i class="bi bi-arrow-right"></i>
+            </button>
+
+          </nav>
+
+        }
+
+      </main>
+
+    </div>
+
+  </div>
+
+</div>
