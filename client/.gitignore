@@ -1,4 +1,4 @@
-
+## CLIENT
 # Compiled output
 /dist
 /tmp
@@ -41,3 +41,14 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Ignore all VS Code workspace settings
+.vscode/*
+
+# EXCEPT for these shared team configurations:
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+####
