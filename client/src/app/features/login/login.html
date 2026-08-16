@@ -46,6 +46,7 @@
 
       <form
         (ngSubmit)="login()"
+        novalidate
       >
 
 
@@ -57,12 +58,23 @@
             Email
           </label>
 
+
           <input
             type="email"
             placeholder="Enter your email address"
             [(ngModel)]="email"
             name="email"
           />
+
+
+          @if (errors.email) {
+
+            <p class="error">
+              {{ errors.email }}
+            </p>
+
+          }
+
 
         </div>
 
@@ -76,6 +88,7 @@
             Password
           </label>
 
+
           <input
             type="password"
             placeholder="Enter your password"
@@ -83,11 +96,21 @@
             name="password"
           />
 
+
+          @if (errors.password) {
+
+            <p class="error">
+              {{ errors.password }}
+            </p>
+
+          }
+
+
         </div>
 
 
 
-        <!-- Remember -->
+        <!-- Remember me -->
 
         <div class="remember">
 
@@ -96,6 +119,7 @@
             [(ngModel)]="rememberMe"
             name="rememberMe"
           />
+
 
           <label>
             Remember me

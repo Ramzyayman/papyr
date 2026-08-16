@@ -1,12 +1,17 @@
 .login-page {
+
   display: flex;
-  min-height: 100vh;
+
+  min-height: calc(100vh - 130px);
+
   width: 100%;
 
   overflow: hidden;
 
   background-color: white;
+
 }
+
 
 
 /* =====================================
@@ -18,7 +23,8 @@
   position: relative;
 
   width: 50%;
-  min-height: 100vh;
+
+  min-height: calc(100vh - 130px);
 
   overflow: hidden;
 
@@ -32,13 +38,12 @@
   position: absolute;
 
   top: 50%;
-  left: 50%;
+
+  left: 30%;
 
   transform: translate(-50%, -50%);
 
   width: 70%;
-
-  color: white;
 
 }
 
@@ -49,7 +54,7 @@
 
   font-family: var(--papyr-font-display);
 
-  font-size: 3.5rem;
+  font-size: 3.2rem;
 
   font-weight: 500;
 
@@ -64,11 +69,9 @@
 
   margin: 0;
 
-  max-width: 420px;
-
   font-family: var(--papyr-font-body);
 
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 
   line-height: 1.45;
 
@@ -77,15 +80,16 @@
 }
 
 
+
 /* =====================================
-   Decorative shapes
+   SHAPES
 ===================================== */
 
 .shape {
 
   position: absolute;
 
-  border-radius: 999px;
+  border-radius: 50%;
 
 }
 
@@ -93,9 +97,11 @@
 .shape-one {
 
   width: 260px;
+
   height: 260px;
 
-  left: -70px;
+  left: -50px;
+
   bottom: -50px;
 
   background-color: #89685c;
@@ -106,10 +112,12 @@
 .shape-two {
 
   width: 200px;
+
   height: 200px;
 
-  left: 90px;
-  bottom: -40px;
+  left: 80px;
+
+  bottom: -20px;
 
   background-color: #f0cbbd;
 
@@ -118,11 +126,13 @@
 
 .shape-three {
 
-  width: 320px;
-  height: 320px;
+  width: 300px;
 
-  right: -160px;
-  top: -160px;
+  height: 300px;
+
+  right: -150px;
+
+  top: -150px;
 
   background-color: #65483d;
 
@@ -149,16 +159,17 @@
 
 .login-container {
 
-  width: 55%;
+  width: 65%;
 
   max-width: 500px;
 
 }
 
 
+
 .login-container h2 {
 
-  margin: 0 0 3.5rem;
+  margin-bottom: 3rem;
 
   text-align: center;
 
@@ -178,7 +189,6 @@
    FORM
 ===================================== */
 
-
 .form-group {
 
   display: flex;
@@ -192,7 +202,7 @@
 
 .form-group label {
 
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 
   font-family: var(--papyr-font-display);
 
@@ -219,8 +229,6 @@
 
   outline: none;
 
-  background-color: white;
-
   font-family: var(--papyr-font-body);
 
   font-size: 1rem;
@@ -239,9 +247,26 @@
 
 
 /* =====================================
-   REMEMBER ME
+   ERROR MESSAGE
 ===================================== */
 
+.error {
+
+  margin: 0.4rem 0 0;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 0.85rem;
+
+  color: #b33a3a;
+
+}
+
+
+
+/* =====================================
+   REMEMBER
+===================================== */
 
 .remember {
 
@@ -259,9 +284,8 @@
 .remember input {
 
   width: 22px;
-  height: 22px;
 
-  accent-color: #65483d;
+  height: 22px;
 
 }
 
@@ -281,7 +305,6 @@
 /* =====================================
    BUTTON
 ===================================== */
-
 
 button {
 
@@ -305,8 +328,6 @@ button {
 
   color: white;
 
-  transition: background-color 150ms ease;
-
 }
 
 
@@ -321,7 +342,6 @@ button:hover {
 /* =====================================
    RESPONSIVE
 ===================================== */
-
 
 @media (max-width: 900px) {
 
@@ -343,21 +363,16 @@ button:hover {
 
   .welcome-panel {
 
-    min-height: 45vh;
+    min-height: 40vh;
 
   }
 
 
   .welcome-content {
 
+    left: 50%;
+
     text-align: center;
-
-  }
-
-
-  .welcome-content p {
-
-    margin: auto;
 
   }
 
@@ -366,7 +381,7 @@ button:hover {
 
     width: 80%;
 
-    padding: 3rem 0;
+    padding: 2rem 0;
 
   }
 
