@@ -1,0 +1,373 @@
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+
+  background-color: white;
+}
+
+
+/* =====================================
+   LEFT PANEL
+===================================== */
+
+.welcome-panel {
+
+  position: relative;
+
+  width: 50%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background-color: #65483d;
+
+}
+
+
+.welcome-content {
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 70%;
+
+  color: white;
+
+}
+
+
+.welcome-content h1 {
+
+  margin: 0 0 1.5rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 3.5rem;
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  color: white;
+
+}
+
+
+.welcome-content p {
+
+  margin: 0;
+
+  max-width: 420px;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1.15rem;
+
+  line-height: 1.45;
+
+  color: white;
+
+}
+
+
+/* =====================================
+   Decorative shapes
+===================================== */
+
+.shape {
+
+  position: absolute;
+
+  border-radius: 999px;
+
+}
+
+
+.shape-one {
+
+  width: 260px;
+  height: 260px;
+
+  left: -70px;
+  bottom: -50px;
+
+  background-color: #89685c;
+
+}
+
+
+.shape-two {
+
+  width: 200px;
+  height: 200px;
+
+  left: 90px;
+  bottom: -40px;
+
+  background-color: #f0cbbd;
+
+}
+
+
+.shape-three {
+
+  width: 320px;
+  height: 320px;
+
+  right: -160px;
+  top: -160px;
+
+  background-color: #65483d;
+
+}
+
+
+
+/* =====================================
+   RIGHT PANEL
+===================================== */
+
+.login-panel {
+
+  width: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+.login-container {
+
+  width: 55%;
+
+  max-width: 500px;
+
+}
+
+
+.login-container h2 {
+
+  margin: 0 0 3.5rem;
+
+  text-align: center;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 3rem;
+
+  font-weight: 500;
+
+  color: #351f18;
+
+}
+
+
+
+/* =====================================
+   FORM
+===================================== */
+
+
+.form-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 2rem;
+
+}
+
+
+.form-group label {
+
+  margin-bottom: 0.8rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 1.1rem;
+
+  color: #351f18;
+
+}
+
+
+.form-group input {
+
+  width: 100%;
+
+  height: 75px;
+
+  padding: 0 1.5rem;
+
+  box-sizing: border-box;
+
+  border: 3px solid #65483d;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background-color: white;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1rem;
+
+  color: #351f18;
+
+}
+
+
+.form-group input::placeholder {
+
+  color: #999;
+
+}
+
+
+
+/* =====================================
+   REMEMBER ME
+===================================== */
+
+
+.remember {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  margin-bottom: 1.8rem;
+
+}
+
+
+.remember input {
+
+  width: 22px;
+  height: 22px;
+
+  accent-color: #65483d;
+
+}
+
+
+.remember label {
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 0.95rem;
+
+  color: #65483d;
+
+}
+
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+
+button {
+
+  width: 100%;
+
+  height: 62px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #65483d;
+
+  cursor: pointer;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1.1rem;
+
+  font-weight: 500;
+
+  color: white;
+
+  transition: background-color 150ms ease;
+
+}
+
+
+button:hover {
+
+  background-color: #51372f;
+
+}
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+
+@media (max-width: 900px) {
+
+
+  .login-page {
+
+    flex-direction: column;
+
+  }
+
+
+  .welcome-panel,
+  .login-panel {
+
+    width: 100%;
+
+  }
+
+
+  .welcome-panel {
+
+    min-height: 45vh;
+
+  }
+
+
+  .welcome-content {
+
+    text-align: center;
+
+  }
+
+
+  .welcome-content p {
+
+    margin: auto;
+
+  }
+
+
+  .login-container {
+
+    width: 80%;
+
+    padding: 3rem 0;
+
+  }
+
+}

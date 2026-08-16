@@ -1,0 +1,333 @@
+.register-page {
+
+  display: flex;
+
+  min-height: calc(100vh - 75px);
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background-color: white;
+
+}
+
+
+
+/* =====================================
+   LEFT PANEL
+===================================== */
+
+.register-panel {
+
+  position: relative;
+
+  width: 50%;
+
+  min-height: calc(100vh - 75px);
+
+  overflow: hidden;
+
+  background-color: #65483d;
+
+}
+
+
+
+.register-content {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 75%;
+
+  color: white;
+
+}
+
+
+.register-content h1 {
+
+  margin: 0 0 1.5rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 3.2rem;
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  color: white;
+
+}
+
+
+.register-content p {
+
+  margin: 0;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1.1rem;
+
+  line-height: 1.45;
+
+  color: white;
+
+}
+
+
+
+/* =====================================
+   DECORATIVE SHAPES
+===================================== */
+
+.shape {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+}
+
+
+.shape-one {
+
+  width: 260px;
+
+  height: 260px;
+
+  left: -50px;
+
+  bottom: -50px;
+
+  background-color: #89685c;
+
+}
+
+
+.shape-two {
+
+  width: 200px;
+
+  height: 200px;
+
+  left: 80px;
+
+  bottom: -20px;
+
+  background-color: #f0cbbd;
+
+}
+
+
+
+/* =====================================
+   FORM PANEL
+===================================== */
+
+.form-panel {
+
+  width: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+.register-container {
+
+  width: 70%;
+
+  max-width: 520px;
+
+}
+
+
+
+.register-container h2 {
+
+  margin: 0 0 2rem;
+
+  text-align: center;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 2.5rem;
+
+  font-weight: 500;
+
+  color: #351f18;
+
+}
+
+
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 1rem;
+
+}
+
+
+.form-group label {
+
+  margin-bottom: 0.5rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 1rem;
+
+  color: #351f18;
+
+}
+
+
+.form-group input {
+
+  width: 100%;
+
+  height: 55px;
+
+  padding: 0 1.3rem;
+
+  box-sizing: border-box;
+
+  border: 3px solid #65483d;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background-color: white;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1rem;
+
+  color: #351f18;
+
+}
+
+
+.form-group input::placeholder {
+
+  color: #999;
+
+}
+
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button {
+
+  width: 100%;
+
+  height: 60px;
+
+  margin-top: 0.8rem;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #65483d;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1.1rem;
+
+  font-weight: 500;
+
+}
+
+
+button:hover {
+
+  background-color: #51372f;
+
+}
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+
+  .register-page {
+
+    flex-direction: column;
+
+  }
+
+
+  .register-panel,
+  .form-panel {
+
+    width: 100%;
+
+  }
+
+
+  .register-panel {
+
+    min-height: 40vh;
+
+  }
+
+
+  .register-content {
+
+    text-align: center;
+
+  }
+
+
+  .register-container {
+
+    width: 80%;
+
+    padding: 2rem 0;
+
+  }
+
+}
+.error {
+
+  margin: 0.4rem 0 0;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 0.85rem;
+
+  color: #b33a3a;
+
+}

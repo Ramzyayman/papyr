@@ -1,0 +1,190 @@
+<div class="register-page">
+
+
+  <!-- Left side -->
+
+  <section class="register-panel">
+
+
+    <div class="register-content">
+
+      <h1>
+        Create Account
+      </h1>
+
+
+      <p>
+        Join Papyr and start building
+        <br>
+        your personal library today
+      </p>
+
+    </div>
+
+
+    <div class="shape shape-one"></div>
+
+    <div class="shape shape-two"></div>
+
+
+  </section>
+
+
+
+  <!-- Right side -->
+
+  <section class="form-panel">
+
+
+    <div class="register-container">
+
+
+      <h2>
+        Sign up
+      </h2>
+
+
+
+      <form
+        (ngSubmit)="register()"
+        novalidate
+      >
+
+
+        <!-- Username -->
+
+        <div class="form-group">
+
+          <label>
+            Username
+          </label>
+
+
+          <input
+            type="text"
+            placeholder="Enter your username"
+            [(ngModel)]="username"
+            name="username"
+          />
+
+
+          @if (errors.username) {
+
+            <p class="error">
+              {{ errors.username }}
+            </p>
+
+          }
+
+
+        </div>
+
+
+
+        <!-- Email -->
+
+        <div class="form-group">
+
+          <label>
+            Email
+          </label>
+
+
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            [(ngModel)]="email"
+            name="email"
+          />
+
+
+          @if (errors.email) {
+
+            <p class="error">
+              {{ errors.email }}
+            </p>
+
+          }
+
+
+        </div>
+
+
+
+        <!-- Password -->
+
+        <div class="form-group">
+
+          <label>
+            Password
+          </label>
+
+
+          <input
+            type="password"
+            placeholder="Enter your password"
+            [(ngModel)]="password"
+            name="password"
+          />
+
+
+          @if (errors.password) {
+
+            <p class="error">
+              {{ errors.password }}
+            </p>
+
+          }
+
+
+        </div>
+
+
+
+        <!-- Confirm Password -->
+
+        <div class="form-group">
+
+          <label>
+            Confirm Password
+          </label>
+
+
+          <input
+            type="password"
+            placeholder="Confirm your password"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+          />
+
+
+          @if (errors.confirmPassword) {
+
+            <p class="error">
+              {{ errors.confirmPassword }}
+            </p>
+
+          }
+
+
+        </div>
+
+
+
+        <button
+          type="submit"
+        >
+          Create Account
+        </button>
+
+
+      </form>
+
+
+    </div>
+
+
+  </section>
+
+
+</div>

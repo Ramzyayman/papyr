@@ -3,6 +3,8 @@ import { Home } from './features/home/home';
 import { Catalog } from './features/catalog/catalog';
 import { Book } from './features/book/book';
 import { Library } from './features/library/library';
+import { Login } from './features/login/login';
+import { Register } from './features/register/register'
 
 export const routes: Routes = [
     {
@@ -20,5 +22,13 @@ export const routes: Routes = [
     {
         path: 'library',
         component: Library
+    },
+    {
+        path: 'login',
+        component: Login
+    },
+    {
+        path: 'register',
+        component: Register
     }
 ];
