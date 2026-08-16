@@ -1,0 +1,586 @@
+/* ========================================
+   Book page
+   ======================================== */
+
+.book-page {
+  padding: 3rem 0 5rem;
+}
+
+
+/* ========================================
+   Back link
+   ======================================== */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 1.5rem;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  color: #766b66;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--papyr-primary);
+}
+
+
+/* ========================================
+   Main book card
+   ======================================== */
+
+.book-details,
+.review-form,
+.reviews-section {
+  background-color: #f8f5f3;
+  border-radius: 6px;
+}
+
+
+/* ========================================
+   Book details
+   ======================================== */
+
+.book-details {
+  padding: 3rem;
+  margin-bottom: 1rem;
+}
+
+.book-cover {
+  position: relative;
+
+  width: 100%;
+  max-width: 240px;
+
+  margin: 0 auto;
+}
+
+.book-cover img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 0.68;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.book-cover__rating {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  padding: 0.3rem 0.55rem;
+
+  border-radius: 999px;
+
+  background-color: #f8f5f3;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  color: var(--papyr-primary);
+}
+
+.book-cover__rating i {
+  font-size: 0.65rem;
+}
+
+
+/* ========================================
+   Book information
+   ======================================== */
+
+.book-information {
+  padding-left: 1rem;
+}
+
+.book-information h1 {
+  margin: 0 0 0.25rem;
+
+  font-family: var(--papyr-font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  line-height: 1.05;
+
+  color: var(--papyr-primary);
+}
+
+.book-author {
+  margin: 0 0 1.25rem;
+
+  font-family: var(--papyr-font-display);
+  font-size: 1.1rem;
+
+  color: #675b56;
+}
+
+
+/* ========================================
+   Genres
+   ======================================== */
+
+.book-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.genre-tag {
+  padding: 0.35rem 0.55rem;
+
+  background-color: #eee8e5;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  color: #766b66;
+}
+
+
+/* ========================================
+   Description
+   ======================================== */
+
+.book-description {
+  margin-bottom: 2rem;
+
+  max-width: 800px;
+}
+
+.book-description p {
+  margin: 0 0 1rem;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.9rem;
+  line-height: 1.55;
+
+  color: #625954;
+}
+
+
+/* ========================================
+   Metadata
+   ======================================== */
+
+.book-metadata {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 1.25rem;
+
+  border: 1px solid #e3d9d5;
+  border-radius: 4px;
+
+  background-color: #fbf8f6;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 1rem 3rem;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metadata-label {
+  font-family: var(--papyr-font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #81756f;
+}
+
+.metadata-value {
+  font-family: var(--papyr-font-body);
+  font-size: 0.8rem;
+
+  color: var(--papyr-primary);
+}
+
+.metadata-value.isbn {
+  font-family: monospace;
+}
+
+
+/* ========================================
+   Library button
+   ======================================== */
+
+.library-button {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+
+  min-width: 155px;
+
+  padding: 0.8rem 1.1rem;
+
+  border: 1px solid var(--papyr-primary);
+  border-radius: 4px;
+
+  background-color: var(--papyr-primary);
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.75rem;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.library-button:hover {
+  background-color: #533a31;
+}
+
+.library-button.in-library {
+  background-color: transparent;
+
+  color: var(--papyr-primary);
+}
+
+
+/* ========================================
+   Review form
+   ======================================== */
+
+.review-form {
+  padding: 2rem 2.25rem;
+
+  margin-bottom: 1rem;
+}
+
+.review-form h2,
+.reviews-section h2 {
+  margin: 0;
+
+  font-family: var(--papyr-font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  color: var(--papyr-primary);
+}
+
+.review-form h2 {
+  margin-bottom: 1.5rem;
+}
+
+.review-form__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0.75rem;
+}
+
+.review-form__top label,
+.rating-input > span {
+  font-family: var(--papyr-font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  color: var(--papyr-primary);
+}
+
+.rating-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.star-button {
+  padding: 0.1rem;
+
+  border: 0;
+  background: transparent;
+
+  color: #827670;
+
+  cursor: pointer;
+}
+
+.star-button:hover,
+.star-button.selected {
+  color: #c59d16;
+}
+
+.star-button i {
+  font-size: 0.8rem;
+}
+
+.rating-number {
+  margin-left: 0.15rem;
+
+  font-size: 0.7rem;
+
+  color: #827670;
+}
+
+.review-form textarea {
+  display: block;
+
+  width: 100%;
+  min-height: 80px;
+
+  padding: 0.8rem;
+
+  resize: vertical;
+
+  border: 1px solid #857872;
+  border-radius: 5px;
+
+  outline: none;
+
+  background-color: transparent;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.8rem;
+
+  color: var(--papyr-primary);
+}
+
+.review-form textarea:focus {
+  border-color: var(--papyr-primary);
+}
+
+.review-form textarea::placeholder {
+  color: #9b918c;
+}
+
+.review-form__actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 0.75rem;
+}
+
+.add-review-button {
+  min-width: 70px;
+
+  padding: 0.5rem 1rem;
+
+  border: 0;
+  border-radius: 5px;
+
+  background-color: var(--papyr-primary);
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.75rem;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.add-review-button:hover:not(:disabled) {
+  background-color: #533a31;
+}
+
+.add-review-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* ========================================
+   Reviews section
+   ======================================== */
+
+.reviews-section {
+  padding: 2rem 1.25rem;
+
+  margin-bottom: 2rem;
+}
+
+.reviews-section h2 {
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid #8b7e77;
+}
+
+.review {
+  padding: 1rem 0;
+
+  border-bottom: 1px solid #a69a94;
+}
+
+.review:last-child {
+  border-bottom: 0;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  margin-bottom: 0.4rem;
+
+  font-family: var(--papyr-font-display);
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--papyr-primary);
+}
+
+.review-user i {
+  font-size: 0.9rem;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin-bottom: 0.35rem;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.65rem;
+
+  color: #746963;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+}
+
+.review-rating i {
+  font-size: 0.65rem;
+
+  color: #c59d16;
+}
+
+.review-rating span {
+  margin-left: 0.15rem;
+
+  color: #746963;
+}
+
+.review-text {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-family: var(--papyr-font-body);
+  font-size: 0.8rem;
+  line-height: 1.45;
+
+  color: #302925;
+}
+
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 991.98px) {
+
+  .book-details {
+    padding: 2rem;
+  }
+
+  .book-cover {
+    max-width: 220px;
+
+    margin-bottom: 2rem;
+  }
+
+  .book-information {
+    padding-left: 0;
+  }
+
+  .book-metadata {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .library-button {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 767.98px) {
+
+  .book-page {
+    padding-top: 2rem;
+  }
+
+  .book-details {
+    padding: 1.5rem;
+  }
+
+  .book-information h1 {
+    font-size: 2rem;
+  }
+
+  .metadata-grid {
+    gap: 1rem;
+  }
+
+  .review-form {
+    padding: 1.5rem;
+  }
+
+  .review-form__top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+}
+
+
+@media (max-width: 575.98px) {
+
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-section {
+    padding: 1.5rem 1rem;
+  }
+
+}

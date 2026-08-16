@@ -1,0 +1,340 @@
+<div class="book-page">
+
+  <div class="container">
+
+    <!-- Back to catalog -->
+
+    <a
+      routerLink="/catalog"
+      class="back-link"
+    >
+      <i class="bi bi-arrow-left"></i>
+      Back to Catalog
+    </a>
+
+
+    <!-- ======================================
+         Book information
+         ====================================== -->
+
+    <section class="book-details">
+
+      <div class="row align-items-start">
+
+        <!-- Cover -->
+
+        <div class="col-lg-3 col-md-4">
+
+          <div class="book-cover">
+
+            <img
+              [src]="book.cover"
+              [alt]="book.title + ' cover'"
+            />
+
+            <div class="book-cover__rating">
+
+              <i class="bi bi-star-fill"></i>
+
+              {{ book.rating.toFixed(1) }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Information -->
+
+        <div class="col-lg-9 col-md-8">
+
+          <div class="book-information">
+
+            <h1>
+              {{ book.title }}
+            </h1>
+
+            <p class="book-author">
+              By <em>{{ book.author }}</em>
+            </p>
+
+
+            <!-- Genres -->
+
+            <div class="book-genres">
+
+              @for (
+                genre of book.genre;
+                track genre
+              ) {
+
+                <span class="genre-tag">
+                  {{ genre }}
+                </span>
+
+              }
+
+            </div>
+
+
+            <!-- Description -->
+
+            <div class="book-description">
+
+              <p>
+                {{ book.description }}
+              </p>
+
+            </div>
+
+
+            <!-- Metadata -->
+
+            <div class="book-metadata">
+
+              <div class="metadata-grid">
+
+                <div class="metadata-item">
+
+                  <span class="metadata-label">
+                    Publisher
+                  </span>
+
+                  <span class="metadata-value">
+                    {{ book.publisher }}
+                  </span>
+
+                </div>
+
+
+                <div class="metadata-item">
+
+                  <span class="metadata-label">
+                    Publication Year
+                  </span>
+
+                  <span class="metadata-value">
+                    {{ book.publishedYear }}
+                  </span>
+
+                </div>
+
+
+                <div class="metadata-item">
+
+                  <span class="metadata-label">
+                    Pages
+                  </span>
+
+                  <span class="metadata-value">
+                    {{ book.pages }}
+                  </span>
+
+                </div>
+
+
+                <div class="metadata-item">
+
+                  <span class="metadata-label">
+                    ISBN
+                  </span>
+
+                  <span class="metadata-value isbn">
+                    {{ book.isbn }}
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Library button -->
+
+              <button
+                type="button"
+                class="library-button"
+                [class.in-library]="isInLibrary"
+                (click)="toggleLibrary()"
+              >
+
+                <i
+                  class="bi"
+                  [class.bi-bookmark]="!isInLibrary"
+                  [class.bi-bookmark-fill]="isInLibrary"
+                ></i>
+
+                {{
+                  isInLibrary
+                    ? 'In Library'
+                    : 'Add to Library'
+                }}
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         Add review
+         ====================================== -->
+
+    <section class="review-form">
+
+      <h2>Add Review</h2>
+
+      <div class="review-form__top">
+
+        <label for="review">
+          Your review:
+        </label>
+
+
+        <div class="rating-input">
+
+          <span>Rate:</span>
+
+          <div class="stars">
+
+            @for (
+              star of [1, 2, 3, 4, 5];
+              track star
+            ) {
+
+              <button
+                type="button"
+                class="star-button"
+                [class.selected]="star <= selectedRating"
+                (click)="selectRating(star)"
+                [attr.aria-label]="'Rate ' + star + ' out of 5'"
+              >
+
+                <i
+                  class="bi"
+                  [class.bi-star]="star > selectedRating"
+                  [class.bi-star-fill]="star <= selectedRating"
+                ></i>
+
+              </button>
+
+            }
+
+            <span class="rating-number">
+              {{ selectedRating }}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <textarea
+        id="review"
+        [(ngModel)]="reviewText"
+        placeholder="Add your review here..."
+      ></textarea>
+
+
+      <div class="review-form__actions">
+
+        <button
+          type="button"
+          class="add-review-button"
+          [disabled]="
+            selectedRating === 0 ||
+            !reviewText.trim()
+          "
+          (click)="addReview()"
+        >
+          Add
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         Reviews
+         ====================================== -->
+
+    <section class="reviews-section">
+
+      <h2>Reviews section</h2>
+
+      <div class="reviews-list">
+
+        @for (
+          review of reviews;
+          track review.id
+        ) {
+
+          <article class="review">
+
+            <div class="review-user">
+
+              <i class="bi bi-person-circle"></i>
+
+              <span>
+                {{ review.username }}
+              </span>
+
+            </div>
+
+
+            <div class="review-meta">
+
+              <span>
+                {{ review.date }}
+              </span>
+
+
+              <div class="review-rating">
+
+                @for (
+                  star of [1, 2, 3, 4, 5];
+                  track star
+                ) {
+
+                  <i
+                    class="bi"
+                    [class.bi-star-fill]="star <= review.rating"
+                    [class.bi-star]="star > review.rating"
+                  ></i>
+
+                }
+
+                <span>
+                  {{ review.rating }}
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <p class="review-text">
+              {{ review.text }}
+            </p>
+
+          </article>
+
+        }
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
