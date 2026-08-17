@@ -1,275 +1,368 @@
-/* ========================================
-   Library page
-   ======================================== */
-
 .library-page {
-  padding: 3.5rem 0 5rem;
+
+  width: 100%;
+
+  min-height: 100vh;
+
 }
 
 
-/* ========================================
-   Intro
-   ======================================== */
+
+.container {
+
+  width: 80%;
+
+  margin: 0 auto;
+
+}
+
+
+
+/* ==========================
+   INTRO
+========================== */
 
 .library-intro {
-  max-width: 850px;
 
-  margin-bottom: 4.5rem;
+  margin-top: 3rem;
+
+  margin-bottom: 4rem;
+
 }
+
 
 .library-intro h1 {
-  margin: 0 0 0.7rem;
+
+  margin: 0 0 1rem;
 
   font-family: var(--papyr-font-display);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 600;
-  line-height: 1.1;
 
-  color: var(--papyr-primary);
+  font-size: 3rem;
+
+  font-weight: 600;
+
+  color: #351f18;
+
 }
+
+
 
 .library-intro p {
-  margin: 0;
 
   font-family: var(--papyr-font-body);
-  font-size: 1rem;
-  line-height: 1.5;
 
-  color: #6d625d;
+  font-size: 1.1rem;
+
+  line-height: 1.6;
+
 }
 
 
-/* ========================================
-   Section heading
-   ======================================== */
 
-.library-section {
-  margin-bottom: 4rem;
-}
+/* ==========================
+   SECTION HEADER
+========================== */
+
 
 .section-heading {
+
   display: flex;
+
   align-items: center;
 
+  gap: 1rem;
+
   margin-bottom: 2rem;
+
 }
 
+
+
 .section-heading h2 {
-  flex: 0 0 auto;
 
   margin: 0;
 
   font-family: var(--papyr-font-display);
-  font-size: 1.75rem;
-  font-weight: 600;
 
-  color: var(--papyr-primary);
+  font-size: 2rem;
+
 }
 
+
+
 .heading-line {
+
   flex: 1;
 
   height: 1px;
 
-  margin: 0 1rem;
+  background: #8d756c;
 
-  background-color: #d9d0cc;
 }
+
+
 
 .view-all {
-  flex: 0 0 auto;
 
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+  text-decoration: none;
+
+  color: #351f18;
 
   font-family: var(--papyr-font-body);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 
-  color: #766b66;
-  text-decoration: none;
-}
-
-.view-all:hover {
-  color: var(--papyr-primary);
-}
-
-.view-all span {
-  font-size: 1rem;
 }
 
 
-/* ========================================
-   Book grid
-   ======================================== */
+
+/* ==========================
+   BOOK GRID
+========================== */
+
 
 .library-grid {
+
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
 
-  gap: 2rem 1.25rem;
+  gap: 2rem;
+
 }
 
 
-/* ========================================
-   Book
-   ======================================== */
 
 .library-book {
-  display: block;
 
-  color: inherit;
   text-decoration: none;
+
+  color: #351f18;
+
 }
 
+
+
 .book-cover {
+
   width: 100%;
 
-  aspect-ratio: 0.7;
-
-  margin-bottom: 0.75rem;
+  aspect-ratio: 3 / 4;
 
   overflow: hidden;
 
-  border-radius: 4px;
+  margin-bottom: 1rem;
 
-  background-color: #eee9e6;
 }
 
+
+
 .book-cover img {
-  display: block;
 
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
 
-  transition: transform 200ms ease;
 }
 
-.library-book:hover .book-cover img {
-  transform: scale(1.025);
-}
+
 
 .library-book h3 {
-  margin: 0 0 0.2rem;
+
+  margin: 0 0 .3rem;
 
   font-family: var(--papyr-font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.15;
 
-  color: var(--papyr-primary);
+  font-size: 1.3rem;
+
 }
 
+
+
 .library-book p {
+
   margin: 0;
 
   font-family: var(--papyr-font-body);
-  font-size: 0.75rem;
 
-  color: #776d68;
+  color: #777;
+
 }
 
 
-/* ========================================
-   Add book
-   ======================================== */
+
+/* ==========================
+   ADD BOOK
+========================== */
+
 
 .add-book {
+
+  aspect-ratio: 3 / 4;
+
+  background: #f5ece8;
+
+  border: 1px dashed #8d756c;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+
   flex-direction: column;
 
-  aspect-ratio: 0.7;
+  justify-content: center;
 
-  border: 1px dashed #cfc2bd;
-  border-radius: 4px;
+  align-items: center;
 
-  background-color: #faf6f4;
-
-  color: #756a65;
   text-decoration: none;
 
-  transition:
-    background-color 150ms ease,
-    border-color 150ms ease;
+  color: #65483d;
+
+  font-family: var(--papyr-font-body);
+
 }
 
-.add-book:hover {
-  background-color: #f4eeeb;
-  border-color: #a99a93;
-}
+
 
 .add-icon {
-  margin-bottom: 0.25rem;
+
+  font-size: 3rem;
+
+}
+
+
+
+/* ==========================
+   LOGGED OUT STATE
+========================== */
+
+
+.library-login {
+
+
+  min-height: 65vh;
+
+
+  display: flex;
+
+
+  flex-direction: column;
+
+
+  justify-content: center;
+
+
+  align-items: center;
+
+
+  text-align: center;
+
+
+}
+
+
+
+.library-login h1 {
+
+
+  font-family: var(--papyr-font-display);
+
+
+  font-size: 2.8rem;
+
+
+  color: #351f18;
+
+
+}
+
+
+
+.library-login p {
+
 
   font-family: var(--papyr-font-body);
-  font-size: 2rem;
-  font-weight: 300;
 
-  line-height: 1;
+
+  font-size: 1.1rem;
+
+
+  line-height: 1.6;
+
+
+  max-width: 500px;
+
+
 }
 
-.add-book span:last-child {
-  font-family: var(--papyr-font-body);
-  font-size: 0.75rem;
+
+
+.library-login-buttons {
+
+
+  display: flex;
+
+
+  gap: 1rem;
+
+
+  margin-top: 2rem;
+
+
 }
 
 
-/* ========================================
-   Responsive
-   ======================================== */
 
-@media (max-width: 991.98px) {
+.library-login-buttons a {
+
+
+  padding: .8rem 2rem;
+
+
+  border-radius: 8px;
+
+
+  text-decoration: none;
+
+
+}
+
+
+
+.login-button {
+
+
+  background-color: #65483d;
+
+
+  color: white;
+
+
+}
+
+
+
+.register-button {
+
+
+  border: 2px solid #65483d;
+
+
+  color: #65483d;
+
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
 
   .library-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(2,1fr);
+
   }
 
-}
-
-
-@media (max-width: 767.98px) {
-
-  .library-page {
-    padding-top: 2.5rem;
-  }
-
-  .library-intro {
-    margin-bottom: 3rem;
-  }
-
-  .library-intro p br {
-    display: none;
-  }
-
-  .library-grid {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 1.75rem 1rem;
-  }
-
-}
-
-
-@media (max-width: 479.98px) {
-
-  .section-heading h2 {
-    font-size: 1.4rem;
-  }
-
-  .heading-line {
-    margin: 0 0.6rem;
-  }
-
-  .view-all {
-    font-size: 0.55rem;
-  }
 
 }

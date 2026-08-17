@@ -6,6 +6,7 @@ import { Library } from './features/library/library';
 import { Login } from './features/login/login';
 import { Register } from './features/register/register'
 import { Account } from './features/account/account';
+import { Contact } from './features/contact/contact';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: 'account',
         component: Account
+    },
+    {
+        path: 'contact',
+        component: Contact
     }
 ];

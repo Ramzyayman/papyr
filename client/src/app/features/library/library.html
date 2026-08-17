@@ -1,96 +1,171 @@
 <div class="library-page">
 
-  <div class="container">
 
-    <!-- Page heading -->
-
-    <section class="library-intro">
-
-      <h1>Your Private Library</h1>
-
-      <p>
-        A quiet space dedicated to your current journeys and future adventures.
-        <br>
-        Organized, calm, and waiting for you.
-      </p>
-
-    </section>
+@if (!isLoggedIn) {
 
 
-    <!-- Want to Read -->
+<section class="library-login">
 
-    <section class="library-section">
-
-      <div class="section-heading">
-
-        <h2>Want to Read</h2>
-
-        <div class="heading-line"></div>
-
-        <a
-          routerLink="/library"
-          class="view-all"
-        >
-          View all
-          <span>→</span>
-        </a>
-
-      </div>
+  <h1>
+    Your Private Library
+  </h1>
 
 
-      <!-- Books -->
-
-      <div class="library-grid">
-
-        @for (
-          book of books;
-          track $index
-        ) {
-
-          <a
-            [routerLink]="['/books', book.id]"
-            class="library-book"
-          >
-
-            <div class="book-cover">
-
-              <img
-                [src]="book.cover"
-                [alt]="book.title + ' cover'"
-              />
-
-            </div>
-
-            <h3>
-              {{ book.title }}
-            </h3>
-
-            <p>
-              {{ book.author }}
-            </p>
-
-          </a>
-
-        }
+  <p>
+    Sign in to save books, manage your collection,
+    and build your personal library.
+  </p>
 
 
-        <!-- Add Book -->
+  <div class="library-login-buttons">
 
-        <a
-          routerLink="/catalog"
-          class="add-book"
-        >
+    <a
+      routerLink="/login"
+      class="login-button"
+    >
+      Log in
+    </a>
 
-          <span class="add-icon">+</span>
 
-          <span>Add Book</span>
+    <a
+      routerLink="/register"
+      class="register-button"
+    >
+      Create Account
+    </a>
 
-        </a>
-
-      </div>
-
-    </section>
 
   </div>
+
+</section>
+
+
+}
+
+
+
+
+
+@if (isLoggedIn) {
+
+
+<div class="container">
+
+
+<!-- KEEP YOUR ORIGINAL HTML BELOW HERE -->
+
+<section class="library-intro">
+
+<h1>Your Private Library</h1>
+
+<p>
+A quiet space dedicated to your current journeys and future adventures.
+<br>
+Organized, calm, and waiting for you.
+</p>
+
+</section>
+
+
+
+<section class="library-section">
+
+
+<div class="section-heading">
+
+<h2>
+Want to Read
+</h2>
+
+
+<div class="heading-line"></div>
+
+
+<a
+routerLink="/library"
+class="view-all"
+>
+View all
+<span>→</span>
+</a>
+
+
+</div>
+
+
+
+
+<div class="library-grid">
+
+
+@for (
+book of books;
+track $index
+) {
+
+
+<a
+[routerLink]="['/books', book.id]"
+class="library-book"
+>
+
+
+<div class="book-cover">
+
+
+<img
+[src]="book.cover"
+[alt]="book.title + ' cover'"
+/>
+
+
+</div>
+
+
+<h3>
+{{ book.title }}
+</h3>
+
+
+<p>
+{{ book.author }}
+</p>
+
+
+</a>
+
+
+}
+
+
+
+<a
+routerLink="/catalog"
+class="add-book"
+>
+
+<span class="add-icon">
++
+</span>
+
+<span>
+Add Book
+</span>
+
+</a>
+
+
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+}
+
 
 </div>

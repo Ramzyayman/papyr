@@ -1,0 +1,380 @@
+.contact-page {
+
+  width: 100%;
+
+  padding: 4rem 0 5rem;
+
+  color: #351f18;
+
+}
+
+
+
+/* =====================================
+   INTRO
+===================================== */
+
+.contact-intro {
+
+  width: 88%;
+
+  margin: 0 auto 2rem;
+
+}
+
+
+
+.contact-intro h1 {
+
+  margin: 0 0 2rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 2.4rem;
+
+  font-weight: 600;
+
+}
+
+
+
+.contact-intro p {
+
+  margin: 0;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1.15rem;
+
+  line-height: 1.9;
+
+  letter-spacing: .02rem;
+
+}
+
+
+
+/* =====================================
+   CONTENT LAYOUT
+===================================== */
+
+.contact-content {
+
+  width: 88%;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.35fr;
+
+  gap: 1.5rem;
+
+  align-items: start;
+
+}
+
+
+
+/* =====================================
+   CARDS
+===================================== */
+
+.inquiries-card,
+.contact-form-card {
+
+  background-color: #f5ece8;
+
+  border: 1px solid #65483d;
+
+  padding: 2rem;
+
+}
+
+
+
+.contact-form-card {
+
+  box-shadow: 0 8px 12px rgba(0,0,0,.08);
+
+}
+
+
+
+/* =====================================
+   CARD TITLES
+===================================== */
+
+.inquiries-card h2,
+.contact-form-card h2 {
+
+  margin: 0 0 1.5rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 2rem;
+
+  font-weight: 600;
+
+}
+
+
+
+.inquiries-card hr {
+
+  border: none;
+
+  border-top: 1px solid #65483d;
+
+  margin: 1.3rem 0;
+
+}
+
+
+
+/* =====================================
+   INQUIRY INFO
+===================================== */
+
+.info-item h3 {
+
+  margin: 0 0 .8rem;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+}
+
+
+
+.info-item p,
+.info-item li {
+
+  margin: 0;
+
+  padding-left: 2.5rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: .95rem;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+}
+
+
+
+.info-item ul {
+
+  margin: 0;
+
+  padding-left: 4rem;
+
+}
+
+
+
+.info-item li {
+
+  margin-bottom: .6rem;
+
+}
+
+
+
+/* =====================================
+   FORM
+===================================== */
+
+form {
+
+  width: 100%;
+
+}
+
+
+
+.form-row {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1.3rem;
+
+}
+
+
+
+.form-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 1.8rem;
+
+}
+
+
+
+.form-group label {
+
+  margin-bottom: .7rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 1.1rem;
+
+  font-weight: 600;
+
+}
+
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-bottom: 3px solid #65483d;
+
+  border-radius: 8px;
+
+  background-color: white;
+
+  padding: 1rem 1.2rem;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 1rem;
+
+  outline: none;
+
+}
+
+
+
+.form-group input,
+.form-group select {
+
+  height: 55px;
+
+}
+
+
+
+.form-group textarea {
+
+  height: 180px;
+
+  resize: none;
+
+}
+
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+  color: #999;
+
+}
+
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+button {
+
+  width: 160px;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #351f18;
+
+  color: white;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+}
+
+
+
+button:hover {
+
+  background-color: #65483d;
+
+}
+
+
+
+/* =====================================
+   VALIDATION
+===================================== */
+
+.error {
+
+  margin: .5rem 0 0;
+
+  color: #b33a3a;
+
+  font-size: .85rem;
+
+  font-family: var(--papyr-font-body);
+
+}
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width: 900px) {
+
+
+  .contact-content {
+
+    grid-template-columns: 1fr;
+
+    width: 90%;
+
+  }
+
+
+  .contact-intro {
+
+    width: 90%;
+
+  }
+
+
+  .form-row {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+}

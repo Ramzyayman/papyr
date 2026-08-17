@@ -1,0 +1,340 @@
+<div class="contact-page">
+
+
+  <!-- Header Section -->
+
+  <section class="contact-intro">
+
+
+    <h1>
+      Reach Out to Papyr
+    </h1>
+
+
+    <p>
+      Whether you seek a specific volume, wish to discuss curatorial
+      <br>
+      selections, or simply want to connect with fellow bibliophiles, we
+      <br>
+      welcome your correspondence. Our curators review messages with the
+      <br>
+      same care they dedicate to our collections.
+    </p>
+
+
+  </section>
+
+
+
+
+
+  <!-- Main Content -->
+
+  <section class="contact-content">
+
+
+    <!-- Direct Inquiries -->
+
+    <div class="inquiries-card">
+
+
+      <h2>
+        Direct Inquiries
+      </h2>
+
+
+      <hr>
+
+
+
+      <div class="info-item">
+
+
+        <h3>
+          ✉ Email
+        </h3>
+
+
+        <p>
+          contact@papyr.com
+        </p>
+
+
+      </div>
+
+
+
+      <hr>
+
+
+
+      <div class="info-item">
+
+
+        <h3>
+          📍 Physical Address
+        </h3>
+
+
+        <p>
+          123 Street Avenue
+          <br>
+          London City
+          <br>
+          United Kingdom
+        </p>
+
+
+      </div>
+
+
+
+
+      <hr>
+
+
+
+
+      <div class="info-item">
+
+
+        <h3>
+          ↗ Social Echoes
+        </h3>
+
+
+        <ul>
+
+          <li>
+            instagram @Papyr
+          </li>
+
+        </ul>
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Contact Form -->
+
+    <div class="contact-form-card">
+
+
+      <h2>
+        Send a Missive
+      </h2>
+
+
+
+
+      <form
+        (ngSubmit)="sendMessage()"
+        novalidate
+      >
+
+
+
+
+        <div class="form-row">
+
+
+          <!-- Name -->
+
+          <div class="form-group">
+
+
+            <label>
+              Your name
+            </label>
+
+
+            <input
+              type="text"
+              placeholder="e.g. Virginia Woolf"
+              [(ngModel)]="name"
+              name="name"
+            />
+
+
+
+            @if(errors.name){
+
+              <p class="error">
+                {{ errors.name }}
+              </p>
+
+            }
+
+
+          </div>
+
+
+
+
+
+
+          <!-- Email -->
+
+          <div class="form-group">
+
+
+            <label>
+              Email Address
+            </label>
+
+
+            <input
+              type="email"
+              placeholder="Virginia@gmail.com"
+              [(ngModel)]="email"
+              name="email"
+            />
+
+
+
+            @if(errors.email){
+
+              <p class="error">
+                {{ errors.email }}
+              </p>
+
+            }
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+        <!-- Topic -->
+
+
+        <div class="form-group">
+
+
+          <label>
+            Subject of inquiry
+          </label>
+
+
+          <select
+            [(ngModel)]="topic"
+            name="topic"
+          >
+
+            <option value="">
+              Select a Topic ...
+            </option>
+
+
+            @for(item of topics; track item){
+
+              <option [value]="item">
+                {{ item }}
+              </option>
+
+            }
+
+
+          </select>
+
+
+
+
+          @if(errors.topic){
+
+            <p class="error">
+              {{ errors.topic }}
+            </p>
+
+          }
+
+
+        </div>
+
+
+
+
+
+
+        <!-- Message -->
+
+
+        <div class="form-group">
+
+
+          <label>
+            Your Message
+          </label>
+
+
+
+          <textarea
+
+            placeholder="Compose your thoughts here....."
+
+            [(ngModel)]="message"
+
+            name="message"
+
+          ></textarea>
+
+
+
+
+
+          @if(errors.message){
+
+            <p class="error">
+              {{ errors.message }}
+            </p>
+
+          }
+
+
+
+        </div>
+
+
+
+
+
+
+        <button
+          type="submit"
+        >
+
+          Send Message ➤
+
+        </button>
+
+
+
+      </form>
+
+
+
+    </div>
+
+
+
+  </section>
+
+
+
+</div>
