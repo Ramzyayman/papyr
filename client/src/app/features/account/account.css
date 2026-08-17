@@ -1,0 +1,432 @@
+.account-page {
+
+  width: 100%;
+
+  padding: 3rem 0 5rem;
+
+}
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+.page-title {
+
+  width: 82%;
+
+  margin: 0 auto 2.5rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 2rem;
+
+  font-weight: 600;
+
+  color: #351f18;
+
+}
+
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.account-wrapper {
+
+  width: 82%;
+
+  margin: auto;
+
+  display: flex;
+
+  gap: 5rem;
+
+}
+
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.account-sidebar {
+
+  width: 160px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.2rem;
+
+}
+
+
+
+.account-sidebar a {
+
+  text-decoration: none;
+
+  font-family: var(--papyr-font-body);
+
+  font-size: 0.95rem;
+
+  color: #351f18;
+
+}
+
+
+
+.account-sidebar a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
+/* =========================
+   MAIN
+========================= */
+
+.account-main {
+
+  flex: 1;
+
+  max-width: 900px;
+
+}
+
+
+
+.details-section,
+.reviews-section {
+
+  border-bottom: 1px solid #8d756c;
+
+  padding-bottom: 2.5rem;
+
+}
+
+
+
+.details-section h2,
+.reviews-section h2 {
+
+  margin: 0 0 2rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 1.8rem;
+
+  font-weight: 600;
+
+}
+
+
+
+/* =========================
+   DETAILS FORM
+========================= */
+
+.form-row {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 3rem;
+
+}
+
+
+
+.form-field {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+
+.form-field label,
+.password-area label {
+
+  margin-bottom: .6rem;
+
+  font-family: var(--papyr-font-display);
+
+  font-weight: 600;
+
+}
+
+
+
+.form-field input {
+
+  height: 45px;
+
+  border: 2px solid #65483d;
+
+  border-radius: 8px;
+
+  padding: 0 1rem;
+
+  font-size: .95rem;
+
+}
+
+
+
+.form-field span {
+
+  margin-top: .5rem;
+
+  font-size: .8rem;
+
+  color: #777;
+
+}
+
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-area {
+
+  margin-top: 2rem;
+
+}
+
+
+.password-area p {
+
+  margin: 0 0 1rem;
+
+  color: #777;
+
+  font-size: .9rem;
+
+}
+
+
+
+.change-password {
+
+  width: 260px;
+
+  height: 45px;
+
+  border-radius: 8px;
+
+  background: white;
+
+  border: 2px solid #65483d;
+
+  color: #65483d;
+
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+
+}
+
+
+
+.buttons button {
+
+  width: 90px;
+
+  height: 40px;
+
+  border-radius: 8px;
+
+  font-size: .9rem;
+
+}
+
+
+
+.cancel {
+
+  background: white;
+
+  border: 2px solid #65483d;
+
+}
+
+
+
+.save {
+
+  background: #65483d;
+
+  border: 2px solid #65483d;
+
+  color: white;
+
+}
+
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews-section {
+
+  margin-top: 3rem;
+
+  border: none;
+
+}
+
+
+
+.review-card {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+
+  padding: 1.2rem;
+
+  margin-bottom: 1.5rem;
+
+  border: 1px solid #8d756c;
+
+}
+
+
+
+.review-card img {
+
+  width: 120px;
+
+  height: 90px;
+
+  object-fit: cover;
+
+}
+
+
+
+.review-content {
+
+  flex: 1;
+
+}
+
+
+
+.review-content h3 {
+
+  margin: 0;
+
+  font-family: var(--papyr-font-display);
+
+  font-size: 1.25rem;
+
+}
+
+
+
+.author,
+.date,
+.review-text {
+
+  margin: .3rem 0;
+
+  font-size: .9rem;
+
+}
+
+
+
+.rating {
+
+  color: #c99a00;
+
+}
+
+
+
+.rating span {
+
+  color: #555;
+
+  margin-left: .4rem;
+
+}
+
+
+
+.delete {
+
+  width: 90px;
+
+  height: 40px;
+
+  border-radius: 8px;
+
+  background: white;
+
+  border: 2px solid #65483d;
+
+  color: #65483d;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .account-wrapper,
+  .page-title{
+
+    width:90%;
+
+  }
+
+
+  .account-wrapper{
+
+    flex-direction:column;
+
+  }
+
+
+  .form-row{
+
+    grid-template-columns:1fr;
+
+  }
+
+}

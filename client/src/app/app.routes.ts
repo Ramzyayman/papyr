@@ -5,6 +5,7 @@ import { Book } from './features/book/book';
 import { Library } from './features/library/library';
 import { Login } from './features/login/login';
 import { Register } from './features/register/register'
+import { Account } from './features/account/account';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: 'register',
         component: Register
+    },
+    {
+        path: 'account',
+        component: Account
     }
 ];

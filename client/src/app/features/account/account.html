@@ -1,0 +1,249 @@
+<div class="account-page">
+
+
+  <h1 class="page-title">
+    Account
+  </h1>
+
+
+
+  <div class="account-wrapper">
+
+
+    <!-- Sidebar -->
+
+    <aside class="account-sidebar">
+
+      <a (click)="scrollToSection('details')">
+        Details
+      </a>
+
+
+      <a (click)="scrollToSection('reviews')">
+        Your Reviews
+      </a>
+
+
+    </aside>
+
+
+
+
+
+    <!-- Main Content -->
+
+    <main class="account-main">
+
+
+
+      <!-- Details -->
+
+      <section
+        id="details"
+        class="details-section"
+      >
+
+
+        <h2>
+          Details
+        </h2>
+
+
+
+        <div class="form-row">
+
+
+          <div class="form-field">
+
+            <label>
+              Username
+            </label>
+
+
+            <input
+              type="text"
+              [(ngModel)]="username"
+            />
+
+          </div>
+
+
+
+
+          <div class="form-field">
+
+            <label>
+              Email
+            </label>
+
+
+            <input
+              type="email"
+              [(ngModel)]="email"
+            />
+
+
+            <span>
+              Used to log in to your account
+            </span>
+
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="password-area">
+
+
+          <label>
+            Password
+          </label>
+
+
+          <p>
+            Log in with your password or using temporary login codes.
+          </p>
+
+
+          <button class="change-password">
+            Change Password
+          </button>
+
+
+        </div>
+
+
+
+
+
+        <div class="buttons">
+
+
+          <button class="cancel">
+            Cancel
+          </button>
+
+
+          <button
+            class="save"
+            (click)="saveChanges()"
+          >
+            Save
+          </button>
+
+
+        </div>
+
+
+      </section>
+
+
+
+
+
+
+
+      <!-- Reviews -->
+
+      <section
+        id="reviews"
+        class="reviews-section"
+      >
+
+
+        <h2>
+          Your Reviews
+        </h2>
+
+
+
+        @for(review of reviews; track $index) {
+
+
+          <article class="review-card">
+
+
+            <img
+              [src]="review.cover"
+              alt="Book cover"
+            />
+
+
+
+            <div class="review-content">
+
+
+              <h3>
+                {{ review.title }}
+              </h3>
+
+
+
+              <p class="author">
+                {{ review.author }}
+              </p>
+
+
+
+              <p class="date">
+                {{ review.date }}
+              </p>
+
+
+
+              <div class="rating">
+
+                ★★★★★
+
+                <span>
+                  {{ review.rating }}
+                </span>
+
+              </div>
+
+
+
+
+              <p class="review-text">
+                {{ review.text }}
+              </p>
+
+
+            </div>
+
+
+
+
+
+            <button
+              class="delete"
+              (click)="deleteReview($index)"
+            >
+              Delete
+            </button>
+
+
+          </article>
+
+
+        }
+
+
+      </section>
+
+
+
+    </main>
+
+
+
+  </div>
+
+
+
+</div>
