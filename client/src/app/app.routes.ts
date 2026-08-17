@@ -4,7 +4,7 @@ import { Catalog } from './features/catalog/catalog';
 import { Book } from './features/book/book';
 import { Library } from './features/library/library';
 import { Login } from './features/login/login';
-import { Register } from './features/register/register'
+import { Register } from './features/register/register';
 import { Account } from './features/account/account';
 import { Contact } from './features/contact/contact';
 
