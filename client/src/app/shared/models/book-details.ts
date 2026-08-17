@@ -1,0 +1,25 @@
+export interface BookDetails {
+
+  id: number;
+
+  title: string;
+
+  author: string;
+
+  description: string;
+
+  cover: string;
+
+  genre: string[];
+
+  rating: number;
+
+  publisher: string;
+
+  publishedYear: number;
+
+  pages: number;
+
+  isbn: string;
+
+}

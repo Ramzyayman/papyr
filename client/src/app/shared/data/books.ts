@@ -1,14 +1,8 @@
-export interface Book {
-  id: number;
-  title: string;
-  author: string;
-  cover: string;
-  genre: string;
-  era: string;
-  rating: number;
-}
+import { Book } from '../models/book';
+
 
 export const BOOKS: Book[] = [
+
   {
     id: 1,
     title: 'The Great Gatsby',
@@ -18,6 +12,7 @@ export const BOOKS: Book[] = [
     era: 'Modernist (1890–1945)',
     rating: 4.4
   },
+
   {
     id: 2,
     title: '1984',
@@ -27,6 +22,7 @@ export const BOOKS: Book[] = [
     era: 'Modernist (1890–1945)',
     rating: 4.5
   },
+
   {
     id: 3,
     title: 'The Hobbit',
@@ -36,4 +32,5 @@ export const BOOKS: Book[] = [
     era: 'Contemporary',
     rating: 4.7
   }
+
 ];

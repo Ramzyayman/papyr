@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-interface Review {
-  title: string;
-  author: string;
-  cover: string;
-  date: string;
-  rating: number;
-  text: string;
-}
+import { UserReview } from '../../shared/models/user-review';
+import { UserService } from '../../services/user.service';
+import { User } from '../../shared/models/user';
 
 
 @Component({
@@ -20,12 +15,11 @@ interface Review {
 export class Account {
 
 
-  username = 'Virginia';
-
-  email = 'Virginia@gmail.com';
+  user!: User;
 
 
-  reviews: Review[] = [
+
+  reviews: UserReview[] = [
 
     {
       title: 'The Botany of Desire',
@@ -58,12 +52,24 @@ export class Account {
 
 
 
+  constructor(
+    private userService: UserService
+  ) {
+
+    this.user = this.userService.getUser();
+
+  }
+
+
+
   saveChanges(): void {
 
-    console.log({
-      username: this.username,
-      email: this.email
-    });
+
+    this.userService.updateUser(this.user);
+
+
+    console.log(this.user);
+
 
     // Later:
     // PUT /api/account
@@ -74,7 +80,9 @@ export class Account {
 
   deleteReview(index: number): void {
 
+
     this.reviews.splice(index, 1);
+
 
     // Later:
     // DELETE /api/reviews/:id
@@ -85,11 +93,15 @@ export class Account {
 
   scrollToSection(section: string): void {
 
+
     document
       .getElementById(section)
       ?.scrollIntoView({
+
         behavior: 'smooth'
+
       });
+
 
   }
 
