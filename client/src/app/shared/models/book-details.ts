@@ -1,6 +1,5 @@
 export interface BookDetails {
-
-  id: number;
+  id: string;
 
   title: string;
 
@@ -21,5 +20,4 @@ export interface BookDetails {
   pages: number;
 
   isbn: string;
-
 }

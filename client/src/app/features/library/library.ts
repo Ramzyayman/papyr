@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  OnInit
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { BOOKS } from '../../shared/data/books';
 import { Book } from '../../shared/models/book';
 
+import { BookService } from '../../services/book.service';
 import { LibraryService } from '../../services/library.service';
-
 
 @Component({
   selector: 'app-library',
@@ -13,51 +16,57 @@ import { LibraryService } from '../../services/library.service';
   templateUrl: './library.html',
   styleUrl: './library.css'
 })
-export class Library {
-
-
-  // Temporary authentication state
-  // Later this will come from AuthService
+export class Library implements OnInit {
 
   isLoggedIn = true;
 
-
+  books: Book[] = [];
 
   constructor(
-    private libraryService: LibraryService
+    private bookService: BookService,
+    private libraryService: LibraryService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {}
 
+  ngOnInit(): void {
+    this.loadBooks();
+  }
 
-
-  /*
-   * IDs of books in user's library.
-   *
-   * Later:
-   * GET /api/library
-   */
-
-  get libraryBookIds(): number[] {
-
+  get libraryBookIds(): string[] {
     return this.libraryService.getLibraryBookIds();
-
   }
 
+  private loadBooks(): void {
 
+    const savedIds =
+      this.libraryService.getLibraryBookIds();
 
+    if (savedIds.length === 0) {
+      this.books = [];
+      return;
+    }
 
-  /*
-   * Books displayed in library.
-   *
-   * Uses the same BOOKS data as Catalog.
-   */
+    this.bookService
+      .getBooksByIds(savedIds)
+      .subscribe({
+        next: books => {
 
-  get books(): Book[] {
+          this.books = books;
 
-    return BOOKS.filter(book =>
-      this.libraryBookIds.includes(book.id)
-    );
+          this.changeDetectorRef.detectChanges();
+        },
 
+        error: error => {
+
+          console.error(
+            'Failed to load library books:',
+            error
+          );
+
+          this.books = [];
+
+          this.changeDetectorRef.detectChanges();
+        }
+      });
   }
-
-
 }

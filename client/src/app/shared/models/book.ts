@@ -1,6 +1,5 @@
 export interface Book {
-
-  id: number;
+  id: string;
 
   title: string;
 
@@ -13,5 +12,4 @@ export interface Book {
   era: string;
 
   rating: number;
-
 }

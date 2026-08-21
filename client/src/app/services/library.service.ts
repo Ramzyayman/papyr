@@ -6,43 +6,57 @@ import { Injectable } from '@angular/core';
 })
 export class LibraryService {
 
-
-  private libraryBookIds: number[] = [
-    1,
-    2,
-    3
-  ];
+  private readonly storageKey = 'papyr_library';
 
 
+  getLibraryBookIds(): string[] {
+    const storedIds =
+      localStorage.getItem(this.storageKey);
 
-  getLibraryBookIds(): number[] {
-
-    return this.libraryBookIds;
-
-  }
-
-
-
-  addBook(bookId: number): void {
-
-    if (!this.libraryBookIds.includes(bookId)) {
-
-      this.libraryBookIds.push(bookId);
-
+    if (!storedIds) {
+      return [];
     }
 
+    try {
+      return JSON.parse(storedIds) as string[];
+    } catch {
+      return [];
+    }
   }
 
 
+  addBook(bookId: string): void {
+    const libraryBookIds =
+      this.getLibraryBookIds();
 
-  removeBook(bookId: number): void {
+    if (!libraryBookIds.includes(bookId)) {
+      libraryBookIds.push(bookId);
 
-    this.libraryBookIds =
-      this.libraryBookIds.filter(
-        id => id !== bookId
+      this.saveLibrary(
+        libraryBookIds
       );
-
+    }
   }
 
+
+  removeBook(bookId: string): void {
+    const libraryBookIds =
+      this.getLibraryBookIds()
+        .filter(id => id !== bookId);
+
+    this.saveLibrary(
+      libraryBookIds
+    );
+  }
+
+
+  private saveLibrary(
+    libraryBookIds: string[]
+  ): void {
+    localStorage.setItem(
+      this.storageKey,
+      JSON.stringify(libraryBookIds)
+    );
+  }
 
 }

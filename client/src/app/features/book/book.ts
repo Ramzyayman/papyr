@@ -1,5 +1,11 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import {
+  Component,
+  ChangeDetectorRef
+} from '@angular/core';
+import {
+  ActivatedRoute,
+  RouterLink
+} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { BookDetails } from '../../shared/models/book-details';
@@ -7,7 +13,7 @@ import { Review } from '../../shared/models/review';
 
 import { BookService } from '../../services/book.service';
 import { ReviewService } from '../../services/review.service';
-
+import { LibraryService } from '../../services/library.service';
 
 @Component({
   selector: 'app-book',
@@ -17,175 +23,115 @@ import { ReviewService } from '../../services/review.service';
 })
 export class Book {
 
-
-  bookId = 1;
-
+  bookId = '';
 
   book!: BookDetails;
 
-
   reviews: Review[] = [];
-
 
   selectedRating = 0;
 
-
   reviewText = '';
-
 
   isInLibrary = false;
 
-
-
   constructor(
-
     private route: ActivatedRoute,
-
     private bookService: BookService,
-
-    private reviewService: ReviewService
-
+    private reviewService: ReviewService,
+    private libraryService: LibraryService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
-
-
     const id =
-      Number(this.route.snapshot.paramMap.get('id'));
+      this.route.snapshot.paramMap.get('id');
 
+    this.bookId = id ?? '';
 
-    this.bookId = id || 1;
-
-
-    this.loadBook();
-
+    if (this.bookId) {
+      this.loadBook();
+    }
   }
-
-
-
-
-
-  // ========================================
-  // Load book
-  // ========================================
 
   private loadBook(): void {
+    this.bookService
+      .getBookById(this.bookId)
+      .subscribe({
+        next: (foundBook) => {
+          if (!foundBook) {
+            return;
+          }
 
+          this.book = foundBook;
 
-    const foundBook =
-      this.bookService.getBookById(this.bookId);
+          this.isInLibrary =
+            this.libraryService
+              .getLibraryBookIds()
+              .includes(this.bookId);
 
+          this.reviews =
+            this.reviewService.getReviewsByBook(
+              this.bookId
+            );
 
+          this.changeDetectorRef.detectChanges();
+        },
 
-    if (!foundBook) {
-
-      return;
-
-    }
-
-
-
-    this.book = foundBook;
-
-
-
-    this.reviews =
-      this.reviewService.getReviewsByBook(this.bookId);
-
+        error: (error) => {
+          console.error(
+            'Failed to load book:',
+            error
+          );
+        }
+      });
   }
-
-
-
-
-
-  // ========================================
-  // Rating
-  // ========================================
 
   selectRating(rating: number): void {
-
     this.selectedRating = rating;
-
   }
-
-
-
-
-
-  // ========================================
-  // Add review
-  // ========================================
 
   addReview(): void {
-
-
     if (
-
       this.selectedRating === 0 ||
-
       !this.reviewText.trim()
-
     ) {
-
       return;
-
     }
 
-
-
     const newReview: Review = {
-
       id: Date.now(),
-
       username: 'You',
-
       date: 'Today',
-
       rating: this.selectedRating,
-
       text: this.reviewText.trim()
-
     };
 
-
-
     this.reviewService.addReview(
-
       this.bookId,
-
       newReview
-
     );
 
-
-
     this.reviews =
-      this.reviewService.getReviewsByBook(this.bookId);
-
-
+      this.reviewService.getReviewsByBook(
+        this.bookId
+      );
 
     this.reviewText = '';
-
     this.selectedRating = 0;
-
-
   }
-
-
-
-
-
-  // ========================================
-  // Library
-  // ========================================
 
   toggleLibrary(): void {
+    if (this.isInLibrary) {
+      this.libraryService.removeBook(
+        this.bookId
+      );
 
+      this.isInLibrary = false;
+    } else {
+      this.libraryService.addBook(
+        this.bookId
+      );
 
-    this.isInLibrary =
-
-      !this.isInLibrary;
-
-
+      this.isInLibrary = true;
+    }
   }
-
-
 }
