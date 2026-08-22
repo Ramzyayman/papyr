@@ -1,15 +1,11 @@
-/* ========================================
-   Catalog page
-   ======================================== */
+/* Main catalog page */
 
 .catalog-page {
   padding: 4rem 0 5rem;
 }
 
 
-/* ========================================
-   Page heading
-   ======================================== */
+/* Catalog heading */
 
 .catalog-heading {
   margin-bottom: 2rem;
@@ -36,9 +32,7 @@
 }
 
 
-/* ========================================
-   Search
-   ======================================== */
+/* Search bar */
 
 .catalog-search {
   position: relative;
@@ -105,18 +99,14 @@
 }
 
 
-/* ========================================
-   Main layout
-   ======================================== */
+/* Sidebar and content layout */
 
 .catalog-layout {
   --bs-gutter-x: 3rem;
 }
 
 
-/* ========================================
-   Sidebar
-   ======================================== */
+/* Filter sidebar */
 
 .catalog-sidebar {
   padding-right: 2rem;
@@ -125,9 +115,7 @@
 }
 
 
-/* ========================================
-   Active filters
-   ======================================== */
+/* Selected filter tags */
 
 .active-filters {
   margin-bottom: 2.5rem;
@@ -203,9 +191,7 @@
 }
 
 
-/* ========================================
-   Filter sections
-   ======================================== */
+/* Filter options */
 
 .filter-section {
   margin-bottom: 2.5rem;
@@ -269,18 +255,14 @@
 }
 
 
-/* ========================================
-   Catalog content
-   ======================================== */
+/* Book results area */
 
 .catalog-content {
   min-width: 0;
 }
 
 
-/* ========================================
-   Toolbar
-   ======================================== */
+/* Results count and sorting */
 
 .catalog-toolbar {
   min-height: 42px;
@@ -333,9 +315,7 @@
 }
 
 
-/* ========================================
-   Book grid
-   ======================================== */
+/* Book cards */
 
 .book-grid {
   row-gap: 2.75rem;
@@ -348,77 +328,8 @@
   text-decoration: none;
 }
 
-.book-cover {
-  width: 100%;
-  aspect-ratio: 0.68;
 
-  margin-bottom: 1rem;
-
-  overflow: hidden;
-
-  background-color: #f1ece9;
-
-  border-radius: 2px;
-}
-
-.book-cover img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition:
-    transform 250ms ease,
-    opacity 250ms ease;
-}
-
-.book-card:hover .book-cover img {
-  transform: scale(1.02);
-}
-
-.book-info h2 {
-  margin: 0 0 0.3rem;
-
-  font-family: var(--papyr-font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.2;
-
-  color: var(--papyr-primary);
-}
-
-.book-author {
-  margin: 0;
-
-  font-family: var(--papyr-font-body);
-  font-size: 0.8rem;
-
-  color: var(--papyr-neutral);
-}
-
-.book-rating {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-
-  margin-top: 0.55rem;
-
-  font-family: var(--papyr-font-body);
-  font-size: 0.75rem;
-
-  color: var(--papyr-primary);
-}
-
-.book-rating i {
-  font-size: 0.7rem;
-}
-
-
-/* ========================================
-   Empty state
-   ======================================== */
+/* No results message */
 
 .catalog-empty {
   min-height: 300px;
@@ -433,59 +344,8 @@
   text-align: center;
 }
 
-.catalog-empty > i {
-  margin-bottom: 1rem;
 
-  font-size: 2rem;
-
-  color: #a99d97;
-}
-
-.catalog-empty h2 {
-  margin: 0 0 0.5rem;
-
-  font-family: var(--papyr-font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  color: var(--papyr-primary);
-}
-
-.catalog-empty p {
-  max-width: 400px;
-
-  margin: 0 0 1.5rem;
-
-  font-size: 0.85rem;
-  line-height: 1.5;
-
-  color: var(--papyr-neutral);
-}
-
-.catalog-empty button {
-  padding: 0.65rem 1.25rem;
-
-  border: 1px solid var(--papyr-primary);
-
-  background-color: transparent;
-
-  font-family: var(--papyr-font-body);
-  font-size: 0.8rem;
-
-  color: var(--papyr-primary);
-
-  cursor: pointer;
-}
-
-.catalog-empty button:hover {
-  background-color: var(--papyr-primary);
-  color: var(--papyr-white);
-}
-
-
-/* ========================================
-   Pagination
-   ======================================== */
+/* Page navigation */
 
 .catalog-pagination {
   display: flex;
@@ -496,73 +356,8 @@
   margin-top: 4rem;
 }
 
-.catalog-pagination > button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
 
-  padding: 0;
-
-  border: 0;
-  background: transparent;
-
-  font-family: var(--papyr-font-body);
-  font-size: 0.8rem;
-
-  color: var(--papyr-neutral);
-
-  cursor: pointer;
-}
-
-.catalog-pagination > button:hover:not(:disabled) {
-  color: var(--papyr-primary);
-}
-
-.catalog-pagination > button:disabled {
-  color: #b8afab;
-
-  cursor: default;
-}
-
-.catalog-pagination__pages {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.catalog-pagination__pages button {
-  width: 32px;
-  height: 32px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 0;
-  background: transparent;
-
-  font-family: var(--papyr-font-body);
-  font-size: 0.8rem;
-
-  color: var(--papyr-neutral);
-
-  cursor: pointer;
-}
-
-.catalog-pagination__pages button:hover {
-  color: var(--papyr-primary);
-}
-
-.catalog-pagination__pages button.active {
-  background-color: var(--papyr-primary);
-
-  color: var(--papyr-white);
-}
-
-
-/* ========================================
-   Responsive
-   ======================================== */
+/* Mobile adjustments */
 
 @media (max-width: 991.98px) {
 
